@@ -1,0 +1,17 @@
+type Component @model
+{
+  id: ID!
+  name: String!
+  children: [ChildComponent] @connection(keyName: "byChild", fields: ["id"])
+}
+
+type ChildComponent @model
+@key(name: "byChild", fields: ["parentID", "childID"])
+@key(name: "byParent", fields: ["childID", "parentID"])
+{
+  id: ID!
+  parentID: ID!
+  childID: ID!
+  parent: Component! @connection(fields: ["parentID"])
+  child: Component! @connection(fields: ["childID"])
+}

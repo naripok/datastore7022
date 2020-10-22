@@ -1,3 +1,20 @@
+In order to reproduce the bug:
+```
+yarn install
+yarn start
+```
+Once the records are synced to the cloud,
+go to the Components table and delete some of then.
+Then, reload the page.
+You can see the errors on the graphql calls
+over the network tab on dev tools.
+
+===================================================
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
